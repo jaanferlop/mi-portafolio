@@ -1,0 +1,34 @@
+/* Guía de estilos: paleta blanco + azul oscuro, 2 familias tipográficas */
+:root {
+  --color-primario: #0b2545;      /* azul oscuro */
+  --color-primario-claro: #13315c;
+  --color-acento: #3e7cb1;        /* azul medio */
+  --color-fondo: #ffffff;         /* blanco */
+  --color-fondo-alt: #f1f5fa;
+  --color-texto: #1b2a41;
+  --color-texto-suave: #52627a;
+  --color-borde: #d5deea;
+  --color-error: #c0392b;
+  --color-ok: #1e8449;
+
+  --fuente-titulos: 'Poppins', 'Segoe UI', sans-serif;
+  --fuente-texto: 'Inter', 'Segoe UI', sans-serif;
+
+  --espaciado: 1rem;
+  --radio: 12px;
+  --sombra: 0 4px 18px rgba(11, 37, 69, 0.12);
+  --transicion: 0.3s ease;
+}
+
+/* Tema oscuro: se activa con data-theme="dark" en <html> */
+[data-theme="dark"] {
+  --color-primario: #6fa8dc;
+  --color-primario-claro: #8fbde8;
+  --color-acento: #6fa8dc;
+  --color-fondo: #0b1a30;
+  --color-fondo-alt: #0f2340;
+  --color-texto: #e8eef7;
+  --color-texto-suave: #a5b4cb;
+  --color-borde: #23406a;
+  --sombra: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
