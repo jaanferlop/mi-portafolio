@@ -29,7 +29,13 @@ mi-portafolio/
 2. Abre `index.html` en el navegador, o ejecuta `python3 -m http.server` y visita `http://localhost:8000`.
 
 ## Capturas de pantalla
-_Agrega aquí capturas en `assets/images/` (escritorio y móvil)._
+### Escritorio
+![Versión escritorio](assets/images/captura-escritorio.png)
+
+### Móvil
+![Versión móvil](assets/images/captura-movil.png)
+
+**Sitio en vivo:** https://jaanferlop.github.io/mi-portafolio/
 
 ## Autor y licencia
 Jaime Andrés Fernández López · Licencia MIT
