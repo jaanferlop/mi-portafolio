@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Jaime Andrés Fernández López, estudiante de Ingeniería de Software y auditor en AYNN.">
+  <meta name="author" content="Jaime Andrés Fernández López">
+  <meta name="theme-color" content="#0b2545">
+  <title>Jaime Fernández | Portafolio</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Encabezado y navegación principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo">JF<span>.</span></a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav>
+        <ul id="menu" class="menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema claro/oscuro">🌙</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Sección de presentación personal -->
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">¡Bienvenido a mi espacio!</p>
+        <h1>Jaime Andrés <span class="accent">Fernández López</span></h1>
+        <p class="subtitle">Estudiante de Ingeniería de Software</p>
+        <a href="#proyectos" class="btn">Ver proyectos</a>
+        <a href="#contacto" class="btn btn-outline">Contáctame</a>
+      </div>
+    </section>
+
+    <!-- Sección sobre mí -->
+    <section id="sobre-mi" class="section">
+      <div class="container">
+        <h2>Sobre mí</h2>
+        <article class="about">
+          <figure class="avatar">
+            <div class="avatar-placeholder" role="img" aria-label="Iniciales de Jaime Fernández">JF</div>
+            <figcaption>Jaime A. Fernández</figcaption>
+          </figure>
+          <div>
+            <p>
+              ¡Hola! Bienvenido a mi espacio. Mi nombre es Jaime Andrés Fernández López, estudiante de
+              Ingeniería de Software y auditor de profesión en la empresa <strong>AYNN</strong>, que presta
+              sus servicios a las joyerías <strong>Oroexpress</strong> a nivel nacional.
+            </p>
+            <p>
+              Combino el rigor de la auditoría con el desarrollo de software para crear soluciones
+              ordenadas, confiables y orientadas al control de la información.
+            </p>
+            <ul class="skills" aria-label="Habilidades">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Git/GitHub</li><li>Auditoría</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección de proyectos: se renderiza desde js/main.js -->
+    <section id="proyectos" class="section section-alt">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <div id="proyectos-grid" class="grid-proyectos" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Sección de contacto con formulario simulado -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <form id="form-contacto" class="form" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required minlength="3">
+            <small class="error-msg" id="error-nombre"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="usuario@ejemplo.com" required>
+            <small class="error-msg" id="error-email"></small>
+          </div>
+
+          <div class="field">
+            <label for="asunto">Asunto</label>
+            <select id="asunto" name="asunto" required>
+              <option value="">Seleccione...</option>
+              <option value="empleo">Oportunidad laboral</option>
+              <option value="proyecto">Proyecto</option>
+              <option value="otro">Otro</option>
+            </select>
+            <small class="error-msg" id="error-asunto"></small>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje (mínimo 10 caracteres)" required minlength="10"></textarea>
+            <small class="error-msg" id="error-mensaje"></small>
+          </div>
+
+          <button type="submit" class="btn">Enviar</button>
+          <p id="form-estado" class="form-estado" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jaime Andrés Fernández López · Ingeniería de Software</p>
+    </div>
+  </footer>
+
+  <script src="js/animations.js"></script>
+  <script src="js/form-handler.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
