@@ -1,0 +1,74 @@
+/* Layout mobile-first. Breakpoints: móvil (base), tablet 768px, desktop 1024px */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
+
+body {
+  font-family: var(--fuente-texto);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  transition: background var(--transicion), color var(--transicion);
+}
+h1, h2, h3, .logo { font-family: var(--fuente-titulos); line-height: 1.2; }
+
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 var(--espaciado); }
+.section { padding: 3.5rem 0; }
+.section-alt { background: var(--color-fondo-alt); }
+.section h2 { font-size: 1.8rem; margin-bottom: 2rem; color: var(--color-primario); }
+
+/* Encabezado (móvil: menú desplegable) */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; position: relative; }
+.menu {
+  position: absolute; top: 64px; left: 0; right: 0;
+  display: flex; flex-direction: column;
+  background: var(--color-fondo);
+  border-bottom: 1px solid var(--color-borde);
+  max-height: 0; overflow: hidden;
+  transition: max-height var(--transicion);
+}
+.menu.abierto { max-height: 300px; }
+.menu a { display: block; padding: 0.9rem var(--espaciado); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0b2545, #13315c);
+  color: #fff; padding: 5rem 0;
+}
+.hero h1 { font-size: 2.2rem; margin: 0.5rem 0; }
+.hero .subtitle { font-size: 1.15rem; opacity: 0.9; margin-bottom: 2rem; }
+
+/* Sobre mí (flex) */
+.about { display: flex; flex-direction: column; gap: 2rem; align-items: center; }
+.about p { margin-bottom: 1rem; }
+
+/* Proyectos (grid auto-fit) */
+.grid-proyectos { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+/* Formulario */
+.form { max-width: 600px; }
+
+.site-footer { background: var(--color-primario-claro); color: #fff; padding: 1.5rem 0; text-align: center; font-size: 0.9rem; }
+[data-theme="dark"] .site-footer { color: #0b1a30; }
+
+/* Tablet */
+@media (min-width: 768px) {
+  .hero h1 { font-size: 3rem; }
+  .about { flex-direction: row; align-items: flex-start; }
+  .grid-proyectos { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .menu-toggle { display: none; }
+  .menu {
+    position: static; flex-direction: row; max-height: none; overflow: visible;
+    border: none; background: none; gap: 0.5rem;
+  }
+  .menu a { padding: 0.5rem 1rem; }
+  .hero { padding: 7rem 0; }
+  .hero h1 { font-size: 3.6rem; }
+  .grid-proyectos { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+}

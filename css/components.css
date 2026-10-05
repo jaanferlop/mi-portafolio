@@ -1,0 +1,86 @@
+/* Componentes reutilizables: botones, tarjetas, inputs, etc. */
+
+.skip-link { position: absolute; left: -999px; background: var(--color-primario); color: #fff; padding: 0.5rem 1rem; z-index: 200; }
+.skip-link:focus { left: 0; }
+
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--color-primario); }
+.logo span { color: var(--color-acento); }
+
+.menu a { border-radius: 8px; transition: background var(--transicion), color var(--transicion); }
+.menu a:hover { background: var(--color-fondo-alt); color: var(--color-acento); }
+
+/* Botón hamburguesa */
+.menu-toggle { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+.menu-toggle span { width: 24px; height: 3px; background: var(--color-primario); border-radius: 2px; transition: transform var(--transicion), opacity var(--transicion); }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.theme-toggle { font-size: 1.3rem; padding: 6px 10px; border-radius: 50%; transition: background var(--transicion); }
+.theme-toggle:hover { background: var(--color-fondo-alt); }
+
+/* Botones */
+.btn {
+  display: inline-block; padding: 0.75rem 1.5rem; border-radius: var(--radio);
+  background: var(--color-acento); color: #fff; font-weight: 500;
+  transition: transform var(--transicion), box-shadow var(--transicion), background var(--transicion);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--sombra); background: var(--color-primario-claro); }
+.btn-outline { background: transparent; border: 2px solid #fff; margin-left: 0.5rem; }
+.btn-outline:hover { background: #fff; color: var(--color-primario); }
+.hero .eyebrow { color: #9cc3e6; font-weight: 500; }
+.accent { color: #9cc3e6; }
+
+/* Avatar */
+.avatar { text-align: center; flex-shrink: 0; }
+.avatar-placeholder {
+  width: 160px; height: 160px; border-radius: 50%;
+  background: var(--color-primario); color: #fff;
+  display: grid; place-items: center; font: 700 3rem var(--fuente-titulos);
+  margin: 0 auto 0.5rem; box-shadow: var(--sombra);
+}
+.avatar figcaption { font-size: 0.85rem; color: var(--color-texto-suave); }
+
+.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.skills li, .tecnologias span {
+  background: var(--color-fondo-alt); color: var(--color-primario);
+  border: 1px solid var(--color-borde);
+  padding: 0.25rem 0.8rem; border-radius: 999px; font-size: 0.85rem;
+}
+
+/* Tarjetas de proyecto */
+.proyecto-card {
+  background: var(--color-fondo); border: 1px solid var(--color-borde);
+  border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra);
+  display: flex; flex-direction: column;
+  transition: transform var(--transicion);
+}
+.proyecto-card:hover { transform: translateY(-6px); }
+.proyecto-card img { width: 100%; height: 180px; object-fit: cover; background: var(--color-fondo-alt); }
+.proyecto-card .card-body { padding: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; flex: 1; }
+.proyecto-card h3 { color: var(--color-primario); }
+.proyecto-card p { color: var(--color-texto-suave); flex: 1; }
+.tecnologias { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.proyecto-card .btn { align-self: flex-start; }
+
+/* Formulario */
+.field { display: flex; flex-direction: column; margin-bottom: 1.2rem; }
+.field label { font-weight: 500; margin-bottom: 0.3rem; }
+.field input, .field select, .field textarea {
+  padding: 0.7rem 0.9rem; border: 2px solid var(--color-borde); border-radius: 8px;
+  background: var(--color-fondo); transition: border-color var(--transicion);
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--color-acento); }
+.field.invalido input, .field.invalido select, .field.invalido textarea { border-color: var(--color-error); }
+.field.valido input, .field.valido select, .field.valido textarea { border-color: var(--color-ok); }
+.error-msg { color: var(--color-error); min-height: 1.2em; font-size: 0.85rem; margin-top: 0.25rem; }
+.form-estado { margin-top: 1rem; font-weight: 500; color: var(--color-ok); }
+
+/* Animación de aparición al hacer scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
