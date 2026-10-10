@@ -102,14 +102,13 @@
   background: var(--color-fondo); border: 2px solid var(--color-acento);
   transition: transform var(--transicion), background var(--transicion), box-shadow var(--transicion);
 }
-.timeline-item.actual::before { background: var(--color-acento); }
 .timeline-item article {
   background: var(--color-fondo); border: 1px solid var(--color-borde);
   border-radius: var(--radio); padding: 1rem 1.2rem; box-shadow: var(--sombra);
   transition: border-color var(--transicion), transform var(--transicion);
 }
 
-/* Tarjeta activa: al pasar el mouse o al quedar en el centro de la pantalla (js/animations.js) */
+/* Tarjeta activa: con el mouse encima; en pantallas táctiles, al pasar por el centro (js/animations.js) */
 .timeline-item:hover::before,
 .timeline-item.en-foco::before {
   background: var(--color-acento);

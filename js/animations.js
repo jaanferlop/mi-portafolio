@@ -21,11 +21,12 @@ function iniciarAnimaciones() {
   elementos.forEach(el => observador.observe(el));
 }
 
-// Línea de tiempo: resalta la tarjeta que pasa por el centro de la pantalla.
-// En escritorio también se resalta con el mouse (CSS :hover); esto cubre el celular.
+// Línea de tiempo en pantallas táctiles: resalta la tarjeta que pasa por el centro.
+// Con mouse no hace falta: el resaltado lo da CSS (:hover) solo al estar sobre la tarjeta.
 function iniciarTimelineActiva() {
   const items = document.querySelectorAll('.timeline-item');
-  if (!items.length || !('IntersectionObserver' in window)) return;
+  const esTactil = window.matchMedia('(hover: none)').matches;
+  if (!esTactil || !items.length || !('IntersectionObserver' in window)) return;
 
   const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(entrada => {
