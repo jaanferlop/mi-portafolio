@@ -47,6 +47,9 @@ h1, h2, h3, .logo { font-family: var(--fuente-titulos); line-height: 1.2; }
 /* Proyectos (grid auto-fit) */
 .grid-proyectos { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 
+/* Experiencia y formación: columnas apiladas en móvil */
+.timeline-columnas { display: grid; grid-template-columns: 1fr; gap: 0 2.5rem; }
+
 /* Formulario */
 .form { max-width: 600px; }
 
@@ -62,7 +65,8 @@ h1, h2, h3, .logo { font-family: var(--fuente-titulos); line-height: 1.2; }
 
 /* Desktop */
 @media (min-width: 1024px) {
-  .menu-toggle { display: none; }
+  /* .header-inner sube la especificidad: components.css (cargado después) define .menu-toggle { display: flex } */
+  .header-inner .menu-toggle { display: none; }
   .menu {
     position: static; flex-direction: row; max-height: none; overflow: visible;
     border: none; background: none; gap: 0.5rem;
@@ -71,4 +75,8 @@ h1, h2, h3, .logo { font-family: var(--fuente-titulos); line-height: 1.2; }
   .hero { padding: 7rem 0; }
   .hero h1 { font-size: 3.6rem; }
   .grid-proyectos { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+  /* Formación | Experiencia lado a lado, alineadas arriba */
+  .timeline-columnas { grid-template-columns: 1fr 1fr; align-items: start; }
+  .timeline-columnas .timeline-grupo { margin-top: 0; }
 }

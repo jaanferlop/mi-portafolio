@@ -20,3 +20,18 @@ function iniciarAnimaciones() {
 
   elementos.forEach(el => observador.observe(el));
 }
+
+// Línea de tiempo: resalta la tarjeta que pasa por el centro de la pantalla.
+// En escritorio también se resalta con el mouse (CSS :hover); esto cubre el celular.
+function iniciarTimelineActiva() {
+  const items = document.querySelectorAll('.timeline-item');
+  if (!items.length || !('IntersectionObserver' in window)) return;
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      entrada.target.classList.toggle('en-foco', entrada.isIntersecting);
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });   // franja del 10% central de la pantalla
+
+  items.forEach(item => observador.observe(item));
+}

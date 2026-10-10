@@ -90,7 +90,7 @@
 /* Línea de tiempo de experiencia */
 .timeline-grupo { color: var(--color-texto); font-size: 1.25rem; margin: 1.5rem 0 1rem; }
 .timeline-item .timeline-lugar { font-weight: 500; color: var(--color-texto); margin-bottom: 0.3rem; }
-.timeline { position: relative; max-width: 760px; padding-left: 1.75rem; }
+.timeline { position: relative; max-width: 760px; padding-left: 1.75rem; list-style: none; } /* sin números del <ol> */
 .timeline::before {
   content: ""; position: absolute; left: 6px; top: 0.4rem; bottom: 0.4rem;
   width: 2px; background: var(--color-borde);
@@ -100,11 +100,26 @@
   content: ""; position: absolute; left: calc(-1.75rem + 1px); top: 1.4rem;
   width: 12px; height: 12px; border-radius: 50%;
   background: var(--color-fondo); border: 2px solid var(--color-acento);
+  transition: transform var(--transicion), background var(--transicion), box-shadow var(--transicion);
 }
 .timeline-item.actual::before { background: var(--color-acento); }
 .timeline-item article {
   background: var(--color-fondo); border: 1px solid var(--color-borde);
   border-radius: var(--radio); padding: 1rem 1.2rem; box-shadow: var(--sombra);
+  transition: border-color var(--transicion), transform var(--transicion);
+}
+
+/* Tarjeta activa: al pasar el mouse o al quedar en el centro de la pantalla (js/animations.js) */
+.timeline-item:hover::before,
+.timeline-item.en-foco::before {
+  background: var(--color-acento);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 5px rgba(62, 124, 177, 0.25);
+}
+.timeline-item:hover article,
+.timeline-item.en-foco article {
+  border-color: var(--color-acento);
+  transform: translateX(4px);
 }
 .timeline-fecha { font-size: 0.85rem; font-weight: 500; color: var(--color-acento); }
 .timeline-item h4 { color: var(--color-primario); margin: 0.2rem 0 0.4rem; font-size: 1.1rem; }

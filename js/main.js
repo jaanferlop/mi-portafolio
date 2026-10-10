@@ -143,5 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
   iniciarMenuActivo();
   iniciarVolverArriba();
   iniciarAnimaciones();   // definido en animations.js
+  iniciarTimelineActiva(); // definido en animations.js
   iniciarFormulario();    // definido en form-handler.js
 });
