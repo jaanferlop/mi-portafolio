@@ -1,6 +1,6 @@
 # Mi Portafolio Web Interactivo
 
-Portafolio personal de **Jaime Andrés Fernández López**, estudiante de Ingeniería de Software y auditor en AYNN (servicios para las joyerías Oroexpress). Actividad integradora de la Unidad 1 – Lenguaje de Programación para la Web.
+Portafolio personal de **Jaime Andrés Fernández López**, estudiante de Ingeniería de Software y auditor profesional. Actividad integradora de la Unidad 1 – Lenguaje de Programación para la Web.
 
 ## Tecnologías
 - HTML5 semántico
@@ -35,7 +35,7 @@ mi-portafolio/
 ### Móvil
 ![Versión móvil](assets/images/captura-movil.png)
 
-**Sitio en vivo:** https://jaanferlop.github.io/mi-portafolio/
+**Sitio en vivo:** https://jaanferlop.github.io/miportafolio/
 
 ## Autor y licencia
 Jaime Andrés Fernández López · Licencia MIT
